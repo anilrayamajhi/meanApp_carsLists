@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="page-header">
+        <h1>
+          The Show Room
+          <!-- Pluralize 'Results' if more than 1 or 0 -->
+          <small>
+            ({{filteredCars.length}} Car<span ng-if="filteredCars.length > 1 || !filteredCars.length">s</span>)
+          </small>
+        </h1>
+      </div>
+      <div class="list-group">
+<!-- car({id: car._id}): car refers to ui-state name: car; _id is coming from front end -->
+        <div class="list-group-item clearfix car" ng-repeat="car in cc.cars | filter: carFilter as filteredCars">
+          <div class="row">
+            <div class="col-sm-3 text-center">
+              <img  ui-sref="car({id: car._id})" ng-src="{{ car.image }}">
+            </div>
+            <div class="col-sm-9">
+              <h3>{{ car.make }} {{ car.model }} <small>{{ car.year }} <button ng-click="cc.destroyCar(car, $index)" class="btn btn-sm btn-danger">X</button></small></h3>
+
+              <p>
+                {{ car.description | limitTo: cc.textLimit}}
+                <span ng-if="car.description.length > cc.textLimit">...</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

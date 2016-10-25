@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="page-header">
+      <h1>{{ scc.car.year }}  {{ scc.car.make }}  {{ scc.car.model }}</h1>
+    </div>
+    <div class="col-md-6">
+      <img class="car-image" ng-src="{{scc.car.image}}"/>
+    </div>
+    <div class="col-md-6">
+      <p>
+        {{ scc.car.description}}
+      </p>
+      <button ng-click="scc.destroyCar()" class="btn btn-sm btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
