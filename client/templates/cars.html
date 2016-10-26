@@ -18,7 +18,8 @@
               <img  ui-sref="car({id: car._id})" ng-src="{{ car.image }}">
             </div>
             <div class="col-sm-9">
-              <h3>{{ car.make }} {{ car.model }} <small>{{ car.year }} <button ng-click="cc.destroyCar(car, $index)" class="btn btn-sm btn-danger">X</button></small></h3>
+              <h3>{{ car.make }} {{ car.model }} <small>{{ car.year }} <button ng-click="cc.destroyCar(car, $index)" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+              </small></h3>
 
               <p>
                 {{ car.description | limitTo: cc.textLimit}}

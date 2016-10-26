@@ -7,13 +7,18 @@ CarFactory.$inject = ['$http']
 
 function CarFactory($http){
  return {
-   index,
-   show,
-   destroy
+   index: index,
+   create: create,
+   show: show,
+   destroy: destroy
  }
 
  function index(){
    return $http.get('/api/cars')
+ }
+
+ function create(nCar){
+    return $http.post('/api/cars', nCar)
  }
 
  function show($stateParams){
