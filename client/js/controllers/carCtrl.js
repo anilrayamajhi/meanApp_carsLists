@@ -22,14 +22,15 @@ function SingleCarController($http, $stateParams, $state, CarFactory){
       })
   }
 
-  vm.launchEdit = function(){
-    vm.selected = true;
-    console.log(vm.car);
-  }
+  // vm.launchEdit = function(){
+  //   vm.selected = true;
+  //   console.log(vm.car);
+  // }
 
   vm.editCar = function(){
     // console.log();
-    $http.patch('api/cars/'+$stateParams.id, vm.car)
+    // $http.patch('api/cars/'+$stateParams.id, vm.car)
+    CarFactory.update($stateParams.id, vm.car)
       .success(function(data){
         vm.selected = false;
       })

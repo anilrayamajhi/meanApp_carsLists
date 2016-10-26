@@ -10,6 +10,7 @@ function CarFactory($http){
    index: index,
    create: create,
    show: show,
+   update: update,
    destroy: destroy
  }
 
@@ -23,6 +24,10 @@ function CarFactory($http){
 
  function show($stateParams){
    return $http.get('api/cars/'+$stateParams)
+ }
+
+ function update(id, edCar){
+   return $http.patch('api/cars/'+id, edCar)
  }
 
  function destroy(id){
