@@ -17,16 +17,16 @@ function router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'templates/cars.html',
       controller: 'CarsController as cc'
     })
+    .state('share',{
+      url:'/cars/new',
+      templateUrl: 'templates/share.html',
+      controller: 'AddController as ac'
+    })
     .state('car',{
       url:'/cars/:id',
       templateUrl: 'templates/car.html',
       controller: 'SingleCarController as scc'
     })
-    // .state('share',{
-    //   url:'/cars',
-    //   templateUrl: 'templates/share.html'
-    //   controller: 'AddController as ac'
-    // })
 }
 
 function navigationBar() {
