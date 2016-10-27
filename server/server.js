@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/factories-practice', function(err) {
   console.log(err || "Connected to MongoDB (factories-practice)")
 })
 
-ghpages.publish(path.join(__dirname, '../', 'client/index.html'), function(err) {
+ghpages.publish(path('../client/index.html'), function(err) {
   if(err) console.log(err);
 });
 
