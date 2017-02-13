@@ -11,6 +11,7 @@ carsRouter.route('/cars/:id')
   .get(carsCtrl.show)
   .patch(carsCtrl.update)
   .delete(carsCtrl.destroy)
+  // .errPg(carCtrl.err404)
 
 carsRouter.get('/seed', carsCtrl.seed)
 
