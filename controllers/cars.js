@@ -21,7 +21,7 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) return console.log('Error', err)
-    console.log(car);
+    console.log(car._id);
     res.json(car)
   })
 }
