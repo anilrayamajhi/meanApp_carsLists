@@ -20,7 +20,12 @@ function index(req, res) {
 
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
-    if(err) {console.log(err); index()}
+    if(err) {console.log(err);
+      Car.find({}, function(err, cars) {
+        if(err) return console.log(err)
+        res.json(cars)
+      })
+      }
     res.json(car)
   })
 }
