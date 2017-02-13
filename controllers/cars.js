@@ -21,6 +21,9 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) return console.log(err)
+    if(!car){
+        res.sendFile('/client/index.html', {root: './'})
+    }
     res.json(car)
   })
 }
