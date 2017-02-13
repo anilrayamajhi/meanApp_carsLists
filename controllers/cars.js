@@ -22,7 +22,7 @@ function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) return console.log('Error', err)
     if(!car){
-        res.sendFile('/client/index.html', {root: './'})
+        console.log('ganey');
     }
     res.json(car)
   })
