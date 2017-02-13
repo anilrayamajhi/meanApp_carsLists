@@ -19,7 +19,7 @@ ghpages.publish(path.normalize(__dirname, '/../client'), function(err) {
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
-// app.use(express.static('client'))
+app.use(express.static('client'))
 
 app.use('/api', apiRoutes)
 
