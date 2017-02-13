@@ -1,7 +1,10 @@
 var
   Car = require('../models/Car.js'),
+  express = require('express'),
+  app = express(),
   seeds = require('../seeds.js')
 
+app.use('/demo1', require('express').static(__dirname + '/demo1'));
 
 module.exports = {
   index,
