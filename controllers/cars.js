@@ -1,5 +1,6 @@
 var
-  Car = require('../models/Car.js')
+  Car = require('../models/Car.js'),
+  path = require('path'),
   seeds = require('../seeds.js')
 
 module.exports = {
