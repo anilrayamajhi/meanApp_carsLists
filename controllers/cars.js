@@ -22,7 +22,7 @@ function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
       console.log('ERROR: ', err);
-      res.redirect('../')
+      res.location('../')
       }
     res.json(car)
   })
