@@ -23,7 +23,7 @@ function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
     res.sendFile(path.normalize(__dirname, '/../../client'), function(err) {
-      if(err) {console.log('ERROR', err)
+      if(err) {console.log('ERROR', err);
     console.log(path.normalize(__dirname, '/../../client'));};
     });
     res.json(car)
