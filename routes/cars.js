@@ -12,6 +12,10 @@ carsRouter.route('/cars/:id')
   .patch(carsCtrl.update)
   .delete(carsCtrl.destroy)
 
+  carsRouter.get('/cars/*', function(req, res) {
+      res.sendFile('/client/index.html', {root: './'})
+    })
+
 carsRouter.get('/seed', carsCtrl.seed)
 
 module.exports = carsRouter
