@@ -27,7 +27,7 @@ function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
       res.sendFile('/client/index.html', {root: './'})
-      console.log('path', path.normalize(__dirname + '/../../client'));
+      console.log('PATH', path.normalize(__dirname + '/../../client'));
   };
     res.json(car)
   })
