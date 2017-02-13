@@ -8,7 +8,8 @@ module.exports = {
   create,
   update,
   destroy,
-  seed
+  seed,
+  err404
 }
 
 function index(req, res) {
@@ -54,4 +55,8 @@ function seed(req, res) {
       res.json({success: true, message: "Cars created! 🚗 🚗 🚗 🚗 🚗 🚗 🚗", cars: cars})
     })
   })
+}
+
+function err404(req, res) {
+  res.sendFile('/client/index.html', {root: './'})
 }
