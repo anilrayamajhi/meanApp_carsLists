@@ -13,7 +13,7 @@ module.exports = {
 
 function index(req, res) {
   Car.find({}, function(err, cars) {
-    if(err) return console.log(err)
+    if(err) {console.log(err)}
     res.json(cars)
   })
 }
