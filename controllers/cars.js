@@ -24,6 +24,7 @@ function show(req, res) {
     if(err) {
     res.sendFile(path.normalize(__dirname + '/../../client/index.html'), {root: './'})
     console.log('ERROR', err);
+    console.log('req.params.id:', req.params.id);
     console.log('PATH',path.normalize(__dirname + '/../../client/index.html'));
   };
     res.json(car)
