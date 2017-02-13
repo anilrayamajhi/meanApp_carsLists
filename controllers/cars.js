@@ -25,7 +25,7 @@ function index(req, res) {
 
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
-    if(!car) {
+    if(err) {
       res.sendFile(path.normalize(__dirname + '/../../client/index.html'));
       console.log('TEST PATH: ', ('/client/index.html', {root: './'}));
       console.log('PATH: ', path.normalize(__dirname + '/../../client/index.html'));
