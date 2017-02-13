@@ -22,7 +22,7 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
-      if(!req.params.id){
+      if(car._id!=req.params.id){
         console.log('IDERROR', err);
       }
     res.sendFile(path.normalize(__dirname + '/../../client/index.html'), {root: './'})
