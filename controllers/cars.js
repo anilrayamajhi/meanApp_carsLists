@@ -21,7 +21,7 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
-    res.sendFile(__dirname + '../../client/index.html');
+    res.sendFilepath.normalize(__dirname, '/../client/index.html');
     console.log('Error', err);
   }
     res.json(car)
