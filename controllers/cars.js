@@ -5,7 +5,7 @@ var
   app = express(),
   seeds = require('../seeds.js')
 
-app.use(express.static('client'))
+// app.use(express.static('client'))
 
 module.exports = {
   index,
