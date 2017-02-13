@@ -8,8 +8,8 @@ module.exports = {
   create,
   update,
   destroy,
-  seed
-  // err404
+  seed,
+  err404
 }
 
 function index(req, res) {
@@ -57,6 +57,6 @@ function seed(req, res) {
   })
 }
 
-// function err404(req, res) {
-//   res.sendFile('/client/index.html', {root: './'})
-// }
+function err404(req, res) {
+  res.sendFile('/client/index.html', {root: './'})
+}
