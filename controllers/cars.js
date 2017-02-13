@@ -19,7 +19,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Car.findById(req.params.id, function(err, car) {console.log(req.params.id);
+  Car.findById(req.params.id, function(err, car) {console.log("TEST",req.params.id);
     if(!req.params.id){
       res.sendFile('/client/index.html', {root: './'})
     }else{if(err) return console.log(err)
