@@ -8,8 +8,7 @@ module.exports = {
   create,
   update,
   destroy,
-  seed,
-  err404
+  seed
 }
 
 function index(req, res) {
@@ -21,6 +20,9 @@ function index(req, res) {
 
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
+    if(!req.params.id){
+      res.sendFile('/client/index.html', {root: './'})
+    }
     if(err) return console.log(err)
     res.json(car)
   })
@@ -55,8 +57,4 @@ function seed(req, res) {
       res.json({success: true, message: "Cars created! 🚗 🚗 🚗 🚗 🚗 🚗 🚗", cars: cars})
     })
   })
-}
-
-function err404(req, res) {
-  res.sendFile('/client/index.html', {root: './'})
 }
