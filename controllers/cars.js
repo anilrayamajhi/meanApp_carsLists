@@ -1,11 +1,7 @@
 var
   Car = require('../models/Car.js'),
   path = require('path'),
-  express = require('express'),
-  app = express(),
   seeds = require('../seeds.js')
-
-app.use(express.static('client'))
 
 module.exports = {
   index,
@@ -26,8 +22,13 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
-      res.sendFile('/client/index.html', {root: './'})
-      console.log(path.normalize(__dirname + '/../../client'));
+      if(!car){
+        console.log('FANEY', err);
+      }
+    res.sendFile(path.normalize(__dirname + '/../../client/index.html'), {root: './'})
+    console.log('ERROR', err);
+    console.log('req.params.id:', req.params.id);
+    console.log('PATH',path.normalize(__dirname + '/../../client/index.html'));
   };
     res.json(car)
   })
