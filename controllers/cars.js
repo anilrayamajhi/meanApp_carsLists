@@ -1,6 +1,5 @@
 var
-  Car = require('../models/Car.js'),
-  path = require('path'),
+  Car = require('../models/Car.js')
   seeds = require('../seeds.js')
 
 module.exports = {
@@ -21,12 +20,7 @@ function index(req, res) {
 
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
-    if(err) {
-    res.sendFile(path.normalize(__dirname + '/../../client/index.html'), {root: './'})
-    console.log('ERROR', err);
-    console.log('req.params.id', req.params.id);
-    console.log('PATH',path.normalize(__dirname + '/../../client/index.html'));
-  };
+    if(err) return console.log(err)
     res.json(car)
   })
 }
