@@ -22,11 +22,11 @@ function index(req, res) {
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
-    res.sendFilepath.normalize(__dirname, '/../client/index.html');
-    console.log('Error', err);
-  }
+    res.sendFile(path.normalize(__dirname, '/../client'), function(err) {
+      if(err) console.log(err);
+    });
     res.json(car)
-  })
+  }})
 }
 
 function create(req, res) {
