@@ -28,7 +28,7 @@ function show(req, res) {
     if(err) {
       res.sendFile('/client/index.html', {root: './'});
       console.log('TEST PATH: ', ('/client/index.html', {root: './'}));
-      console.log('PATH: ', path.normalize(__dirname + '/../../client'));
+      console.log('PATH: ', path.normalize(__dirname + '/../../client/index.html'));
   };
     res.json(car)
   })
