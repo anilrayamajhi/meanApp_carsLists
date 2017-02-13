@@ -20,11 +20,9 @@ function index(req, res) {
 
 function show(req, res) {
   Car.findById(req.params.id, function(err, car) {
-    if(err) return console.log('Error', err)
-    if(car._id == undefined){
-      console.log('CAR NOT FOUND');
-    }
-    console.log('CAR', car._id);
+    if(err) {console.log('Error', err)
+    res.sendFile('/client/index.html', {root: './'})
+  }
     res.json(car)
   })
 }
