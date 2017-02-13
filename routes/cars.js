@@ -13,7 +13,7 @@ carsRouter.route('/cars/:id')
   .delete(carsCtrl.destroy)
 
 
-carsRouter.get('*', function(req, res) {
+carsRouter.get('/cars/*', function(req, res) {
     res.sendFile('/client/index.html', {root: './'})
   })
 
