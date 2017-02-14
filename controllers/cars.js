@@ -1,6 +1,10 @@
 var
   Car = require('../models/Car.js')
-  seeds = require('../seeds.js')
+  seeds = require('../seeds.js'),
+  express = require('express'),
+  app = express()
+
+app.use(express.static('client'))
 
 module.exports = {
   index,
