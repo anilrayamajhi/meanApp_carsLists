@@ -18,11 +18,11 @@ function index(req, res) {
   })
 }
 
-function show(req, res) {
+function show(req, res, next) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
       console.log('ERROR: ', err);
-      res.location('back')
+      // res.location('back')
       }
     res.json(car)
   })
