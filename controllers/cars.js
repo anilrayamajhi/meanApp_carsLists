@@ -26,7 +26,7 @@ function show(req, res, next) {
   Car.findById(req.params.id, function(err, car) {
     if(err) {
       console.log('ERROR: ', err);
-      // res.sendFile('/client/index.html', {root: './'})
+      res.sendFile('/client/index.html', {root: './'})
       }
     res.json(car)
   })
