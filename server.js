@@ -7,7 +7,7 @@ var
   apiRoutes = require('./routes/cars.js'),
   ghpages = require('gh-pages'),
   path = require('path'),
-  PORT = process.env.port || 3000
+  PORT = process.env.port || 7000
 
 mongoose.connect('mongodb://localhost/factories-practice', function(err) {
   console.log(err || "Connected to MongoDB (factories-practice)")
